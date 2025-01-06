@@ -1,0 +1,15 @@
+1. Zaimplementować algorytm z podejściem ewolucyjnym, zadania pchania wózka
+
+Zadanie pchania wózka określone jest jako problem maksymalizacji całkowitej drogi
+przebytej w zadanym czasie po odjęciu całkowitego wysiłku. Dyskretny model stanowy
+opisujący taki problem wyraża się następująco
+
+x1(k + 1) = x2(k),
+x2(k + 1) = 2 * x2(k) - x1(k) + 1 / N^2 * uk(k)
+
+
+jako kryterium poszukiwań przyjmuje się następujący wskaźnik jakości sterowania
+
+J = x1(N) - 1 / (2 * N) * [SUMA, k = 0, N - 1] u^2(k)
+
+Zadanie rozwiązać dla następujących parametrów, N = 5, 10, 15, 20, 25, 30, 35, 40, 45
