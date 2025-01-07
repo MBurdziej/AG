@@ -143,7 +143,7 @@ for N in Ns:  # Wybieramy reprezentatywne wartości N
     plt.plot(range(len(avg_fitness_history)), avg_fitness_history, linestyle='--', label=f"Średnie J dla N={N}")
 
     plt.title(f"Poprawa wskaźnika J w trakcie iteracji dla N = {N}")
-    plt.xlabel("Indeks generacji")
+    plt.xlabel("Pokolenie")
     plt.ylabel("Wskaźnik J")
     plt.legend()
     plt.grid()
