@@ -61,13 +61,14 @@ for N in Ns:
 Ns = list(optimal_results.keys())
 fitness_values = [optimal_results[N][1] for N in Ns]
 
-plt.figure()
+plt.figure(figsize=(12, 8))
 plt.plot(Ns, fitness_values, marker='o', linestyle='-', label="Optymalny wskaźnik J")
-plt.title("Wskaźnik J w zależności od N (optymalizacja)")
+plt.title("Wskaźnik J w zależności od N, optymalne")
 plt.xlabel("N (liczba kroków)")
 plt.ylabel("Optymalny wskaźnik J")
 plt.grid()
 plt.legend()
+plt.savefig('J(N)_opt.png', format='png', dpi=300)
 plt.show()
 
 # Wizualizacja sterowania u dla różnych N
@@ -75,23 +76,25 @@ plt.figure(figsize=(12, 8))
 for N in Ns:
     optimal_u, _ = optimal_results[N]
     plt.plot(range(N), optimal_u, label=f"N={N}")
-plt.title("Sterowanie u dla różnych wartości N (optymalizacja)")
+plt.title("Sterowanie u dla różnych wartości N, optymalne")
 plt.xlabel("Czas k")
 plt.ylabel("u (sterowanie)")
 plt.legend()
 plt.grid()
+plt.savefig('u(N)_opt.png', format='png', dpi=300)
 plt.show()
 
 # Wizualizacja trajektorii dla kilku N
 plt.figure(figsize=(12, 8))
-for N in [5, 20, 45]:  # Wybieramy reprezentatywne wartości N
+for N in Ns:  # Wybieramy reprezentatywne wartości N
     optimal_u, _ = optimal_results[N]
     x1, _ = simulate_system(optimal_u, N)
     plt.plot(range(N + 1), x1, label=f"N={N}")
 
-plt.title("Trajektoria położenia x1 dla różnych wartości N (optymalizacja)")
+plt.title("Trajektoria położenia x1 dla różnych wartości N, optymalne")
 plt.xlabel("Czas k")
 plt.ylabel("x1 (położenie)")
 plt.legend()
 plt.grid()
+plt.savefig('x1(N)_opt.png', format='png', dpi=300)
 plt.show()

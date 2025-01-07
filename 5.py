@@ -90,7 +90,7 @@ for N in Ns:
     print(f"Optymalizacja dla N = {N}...")
     best_u, best_fitness, fitness_history, avg_fitness_history = genetic_algorithm(N)
     results[N] = (best_u, best_fitness, fitness_history, avg_fitness_history)
-    print(f"Najlepszy wskaźnik J = {best_fitness:.4f}\n")
+    print(f"Najlepszy wskaźnik J = {best_fitness}\n")
 
 # Wizualizacja wskaźnika J dla różnych wartości N
 Ns = list(results.keys())
